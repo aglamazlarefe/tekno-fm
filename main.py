@@ -151,4 +151,4 @@ async def kanal_sil(ctx, *, name):
 
 
 kal()
-Bot.run("ODEwMTg1NzAwMzM0NjMyOTYw.YCf-Ow.2xjyIKpiF_bHVF6Y4KBVBoLjCSc")
+Bot.run(token)
