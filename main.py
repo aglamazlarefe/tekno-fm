@@ -149,6 +149,9 @@ async def kanal_sil(ctx, *, name):
     else:
         await ctx.send(f' {name} isminde bir kanal yoktur')
 
+@Bot.command()
+async def deneme(ctx):
+    await ctx.send("deneme kodudur")
 
 kal()
 Bot.run(token)
