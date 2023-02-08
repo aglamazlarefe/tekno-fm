@@ -149,9 +149,26 @@ async def kanal_sil(ctx, *, name):
     else:
         await ctx.send(f' {name} isminde bir kanal yoktur')
 
-@Bot.command()
-async def deneme(ctx):
-    await ctx.send("deneme kodudur")
+
+@Bot.tree.command(name="deneme")
+async def deneme(interaction: discord.interactions):
+    await interaction.response.send_message(f"Hey {interaction.user.mention}! bu bir eğik çizgi komutudur!", ephemeral=True)
+
+
+@Bot.tree.command(name="söyle")
+@discord.app_commands.describe(thing_to_say = "What should I say?")
+async def say(interaction: discord.Interaction, thing_to_say: str):
+    await interaction.response.send_message(f"{interaction.user.name} said: {thing_to_say}")
+
+
+
+
+
+
+
+
+
+
 
 kal()
 Bot.run(token)
