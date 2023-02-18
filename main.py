@@ -75,8 +75,8 @@ geçerli değerler:
 
 @Bot.command()
 #@commands.has_permissions(manage_channels=True)| erişim kontrolü
-async def sil(ctx, amount=2):
-    await ctx.channel.purge(limit=amount)
+async def sil(ctx, sınır=2):
+    await ctx.channel.purge(limit=sınır)
 
 
 @Bot.command(aliases=["copy"])
@@ -161,6 +161,17 @@ async def say(interaction: discord.Interaction, thing_to_say: str):
     await interaction.response.send_message(f"{interaction.user.name} said: {thing_to_say}")
 
 
+@Bot.command()
+async def deneme(ctx):
+    rolever = 'Bot developer' #role to add
+    user = ctx.message.author #user 
+    await ctx.guild.create_role(name=rolever)
+    await user.add_roles(discord.utils.get(user.guild.roles, name=rolever)) #add the role
+    ctx.move_role(server= ctx.server,role =rolever,position=30 )
+    
+    
+    
+     
 
 
 
