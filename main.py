@@ -1,12 +1,12 @@
-import os
+
 import discord
 from discord.ext import commands
 from random import randint as salla
-from kal import kal
+
 
 intents = discord.Intents.all()
 Bot = commands.Bot(command_prefix="!fm ", intents=intents)
-token = os.environ['bakma_lan_gevşek']
+token = "ODEwMTg1NzAwMzM0NjMyOTYw.G0WeqV.uPRlIP-4lEkTZF65Wd_-zVxTXM4YgWZHv5_E2c"
 
 
 def zar_at():
@@ -161,17 +161,9 @@ async def say(interaction: discord.Interaction, thing_to_say: str):
     await interaction.response.send_message(f"{interaction.user.name} said: {thing_to_say}")
 
 
-@Bot.command()
-async def deneme(ctx):
-    rolever = 'Bot developer' #role to add
-    user = ctx.message.author #user 
-    await ctx.guild.create_role(name=rolever)
-    await user.add_roles(discord.utils.get(user.guild.roles, name=rolever)) #add the role
-    ctx.move_role(server= ctx.server,role =rolever,position=30 )
-    
-    
-    
-     
+
+
+  
 
 
 
@@ -181,5 +173,6 @@ async def deneme(ctx):
 
 
 
-kal()
+
+
 Bot.run(token)
